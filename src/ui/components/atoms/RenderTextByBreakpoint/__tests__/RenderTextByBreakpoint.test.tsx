@@ -1,8 +1,8 @@
 import { screen } from '@testing-library/react'
-import T from 'ui/theme'
-import { renderWithProviders } from 'tests/providers'
+import { renderWithProviders } from 'testHelpers/providers'
+import { size } from 'testHelpers/mocks'
 import RenderTextByBreakpoint from '..'
-import { size } from 'tests/mocks'
+import T from 'ui/theme'
 
 size(T.windowSizes.sm)
 

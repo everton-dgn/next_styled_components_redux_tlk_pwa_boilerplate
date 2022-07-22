@@ -1,8 +1,8 @@
 import { screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
-import { renderWithProviders } from 'tests/providers'
+import { renderWithProviders } from 'testHelpers/providers'
+import { mockedPush, mockedPrefetch } from 'testHelpers/mocks'
 import PageExample3 from '../index.page'
-import { mockedPush, mockedPrefetch } from 'tests/mocks'
 import * as mock from 'pages/page_example_3/mocks/mockedUseExampleAsyncSlice'
 import * as store from 'infra/store/isLoading/useAdapter'
 

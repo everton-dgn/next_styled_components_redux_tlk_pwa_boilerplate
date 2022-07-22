@@ -1,8 +1,8 @@
 import { screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
-import { renderWithProviders } from 'tests/providers'
+import { renderWithProviders } from 'testHelpers/providers'
+import { mockedPush, mockedPrefetch } from 'testHelpers/mocks'
 import Home from '../index.page'
-import { mockedPush, mockedPrefetch } from 'tests/mocks'
 
 describe('[Page] Home', () => {
   const user = userEvent.setup({ delay: null })

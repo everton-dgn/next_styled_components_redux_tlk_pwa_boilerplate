@@ -1,7 +1,8 @@
 import { useEffect, useLayoutEffect } from 'react'
 import { useTheme } from 'infra/store/theme/useAdapter'
+import { SetThemeType, UseThemeDetectType } from './types'
 
-export const useThemeDetect = () => {
+export const useThemeDetect = (): UseThemeDetectType => {
   const {
     isPrefersColorSchemeDark,
     isPrefersColorScheme,
@@ -18,14 +19,14 @@ export const useThemeDetect = () => {
     [isPrefersColorScheme, setIsPrefersColorSchemeDark]
   )
 
-  const prefersColorScheme = isPrefersColorSchemeDark ? 'dark' : 'light'
-  const theme = isDarkMode ? 'dark' : 'light'
+  const prefersColorScheme: string = isPrefersColorSchemeDark ? 'dark' : 'light'
+  const theme: string = isDarkMode ? 'dark' : 'light'
 
   const selectedTheme: string = isPrefersColorScheme
     ? prefersColorScheme
     : theme
 
-  const showThemeToSelect = selectedTheme === 'dark' ? 'light' : 'dark'
+  const showThemeToSelect: string = selectedTheme === 'dark' ? 'light' : 'dark'
 
   useLayoutEffect(
     function changeTheme() {
@@ -34,7 +35,7 @@ export const useThemeDetect = () => {
     [selectedTheme]
   )
 
-  const setTheme = () => {
+  const setTheme = (): SetThemeType => {
     setIsPrefersColorScheme()
 
     if (isPrefersColorSchemeDark && isPrefersColorScheme) return

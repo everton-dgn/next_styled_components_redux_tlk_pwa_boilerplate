@@ -1,8 +1,8 @@
 import { screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
-import { renderWithProviders } from 'tests/providers'
+import { renderWithProviders } from 'testHelpers/providers'
+import { mockedPush, mockedPrefetch } from 'testHelpers/mocks'
 import PageExample1 from '../index.page'
-import { mockedPush, mockedPrefetch } from 'tests/mocks'
 
 describe('[Page] PageExample1', () => {
   it('should go to another page by clicking the button', async () => {

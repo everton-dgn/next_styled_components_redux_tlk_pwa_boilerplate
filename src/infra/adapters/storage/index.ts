@@ -1,4 +1,8 @@
-export const storageAdapter = (storage?: 'sessionStorage') => {
+import { StorageAdapterType } from './types'
+
+export const storageAdapter = (
+  storage?: 'sessionStorage'
+): StorageAdapterType => {
   const isClientBrowser = typeof window === 'object'
   const setStorageLocation = () => {
     return isClientBrowser && storage === 'sessionStorage'

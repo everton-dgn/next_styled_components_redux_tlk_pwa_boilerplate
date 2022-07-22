@@ -1,10 +1,14 @@
 import { useState } from 'react'
 import { storageAdapter } from 'infra/adapters/storage'
-import { useStorageProps } from './types'
+import { useStorageProps, UseStorageType } from './types'
 
-export const useStorage = ({ key, initialValue, storage }: useStorageProps) => {
+export const useStorage = ({
+  key,
+  initialValue,
+  storage
+}: useStorageProps): UseStorageType => {
   const { getStorageAdapter, setStorageAdapter } = storageAdapter(storage)
-  const [getStorage, setStorage] = useState(
+  const [getStorage, setStorage] = useState<unknown>(
     getStorageAdapter(key, initialValue) ?? initialValue
   )
 
