@@ -1,6 +1,6 @@
 import { screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
-import { renderWithProviders } from 'tests/providers'
+import { renderWithProviders } from 'testHelpers/providers'
 import Button from '..'
 
 describe('[Component] Button', () => {

@@ -1,4 +1,4 @@
-import { renderWithProviders } from 'tests/providers'
+import { renderWithProviders } from 'testHelpers/providers'
 import HeadPage from '..'
 
 describe('[Component] HeadPage', () => {

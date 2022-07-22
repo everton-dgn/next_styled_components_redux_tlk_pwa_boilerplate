@@ -1,6 +1,6 @@
 import { screen } from '@testing-library/react'
+import { renderWithProviders } from 'testHelpers/providers'
 import ErrorTemplate from '..'
-import { renderWithProviders } from 'tests/providers'
 
 describe('[Template] Error', () => {
   it('should render a children and a title', () => {

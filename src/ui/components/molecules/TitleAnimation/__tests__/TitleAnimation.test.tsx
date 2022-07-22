@@ -1,6 +1,6 @@
 import { act, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
-import { renderWithProviders } from 'tests/providers'
+import { renderWithProviders } from 'testHelpers/providers'
 import TitleAnimation from '..'
 
 describe('[Component] TitleAnimation', () => {

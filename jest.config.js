@@ -28,7 +28,7 @@ module.exports = {
     'src/infra/http/',
     'src/infra/store/',
     'src/types/',
-    'src/tests/mocks/index.ts',
+    'src/testHelpers/',
     'stories.tsx',
     'types.ts'
   ],
@@ -36,7 +36,7 @@ module.exports = {
     '^.+\\.tsx?$': ['babel-jest', { presets: ['next/babel'] }]
   },
   moduleNameMapper: {
-    '^.+\\.svg$': '<rootDir>/src/tests/mocks/svg.ts'
+    '^.+\\.svg$': '<rootDir>/src/testHelpers/mocks/svg.ts'
   },
   coverageThreshold: {
     global: {

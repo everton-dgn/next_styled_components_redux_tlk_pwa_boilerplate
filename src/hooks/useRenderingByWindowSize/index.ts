@@ -1,19 +1,18 @@
 import { useEffect, useState } from 'react'
 import T from 'ui/theme'
-import { UseWindowSizeType } from './types'
+import { GetWindowSizeType, UseRenderingByWindowSizeType } from './types'
 
-export const getWindowSize = () => {
-  const minWidth = (size: number) =>
-    window.matchMedia(`(min-width: ${size}px)`).matches
-  return {
-    sm: minWidth(T.windowSizes.sm),
-    md: minWidth(T.windowSizes.md),
-    lg: minWidth(T.windowSizes.lg)
-  }
-}
+const isMinimumWidth = (size: number): boolean =>
+  window.matchMedia(`(min-width: ${size}px)`).matches
 
-export const useRenderingByWindowSize = () => {
-  const [windowSize, setWindowSize] = useState<UseWindowSizeType>(
+export const getWindowSize = (): GetWindowSizeType => ({
+  sm: isMinimumWidth(T.windowSizes.sm),
+  md: isMinimumWidth(T.windowSizes.md),
+  lg: isMinimumWidth(T.windowSizes.lg)
+})
+
+export const useRenderingByWindowSize = (): UseRenderingByWindowSizeType => {
+  const [windowSize, setWindowSize] = useState<GetWindowSizeType>(
     getWindowSize()
   )
 
